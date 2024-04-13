@@ -1,0 +1,65 @@
+﻿@using Models
+@model IEnumerable<User>
+@{
+    ViewData["Title"] = "User";
+}
+<div class="dev1">
+    <div class="exportDiv">
+        <button id="exportBtn">
+            Export
+        </button>
+    </div>
+    <div id="searchTableDiv">
+        <p id="table_title">User Table</p>
+        <input type="search" placeholder="Search..." class="searchInput" />
+    </div>
+    <table class="styled-table">
+        <thead>
+            <tr>
+                <th>name</th>
+                <th>Email</th>
+                <th>Address</th>
+                <th>Phone nmber</th>
+                <
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var obj in Model)
+            {
+                <tr>
+                    <td>
+                        @obj.name 
+                    </td>
+                    <td>
+                        @obj.email
+                    </td>
+                    <td>
+                        @obj.address
+                    </td>
+                    <td>
+                        @obj.phonenumber
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <ul id="tableList" class="list3">
+        <button class="fa-solid fa-angles-left"></button>
+        <button class="fa-solid fa-angle-left"></button>
+        <div id="PageNumberList" class="PageNumberList">
+            <button id="button1">1</button>
+            <button id="button2">2</button>
+            <button id="button3">3</button>
+        </div>
+        <button class="fa-solid fa-angle-right"></button>
+        <button class="fa-solid fa-angles-right"></button>
+    </ul>
+    <script>
+        if (@Model.ToArray().Length < 20)
+            document.getElementById("button3").style = "display:none";
+     </script>
+    <script>
+        if (@Model.ToArray().Length <10)
+            document.getElementById("button2").style = "display:none";
+    </script>
+</div>

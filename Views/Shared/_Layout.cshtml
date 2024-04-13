@@ -1,0 +1,136 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - MDW</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/MDW.styles.css" asp-append-version="true" />
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!--Get your own code at fontawesome.com-->
+</head>
+<body>
+    <header>
+        <div>
+
+            <div class ="header1">
+                <div class="title">
+                    MDW Admin Page
+                </div>
+                <div>
+                    <button class="logoutButton">
+                        تسجيل خروج
+                    </button>
+                </div>
+            </div>
+            <div>
+                <ul class="list1">
+                    <il class="listItem1">
+                        <a id="link1" class="herff" onmouseenter="myFunction(0,0)" onmouseleave="myFunction(0,1)">
+                            السجل
+                        </a>
+                        <ul id="list1" class="list2">
+                            
+                            <il class="listItem2">
+                                <a class="herff1" onmouseenter="myFunction(0,0)" onmouseleave="myFunction(0,1)">
+                                    سجل التبرع النقدي 
+                                </a>
+                            </il>
+                            <il class="listItem2">
+                                <a class="herff1" onmouseenter="myFunction(0,0)" onmouseleave="myFunction(0,1)">
+                                    سجل التبرع بلأدوية
+                                </a>
+                            </il>
+                            <il class="listItem2">
+                                <a class="herff1" onmouseenter="myFunction(0,0)" onmouseleave="myFunction(0,1)">
+                                    سجل طلب الأدوية
+                                </a>
+                            </il>
+                        </ul>
+                    </il>
+                    <il class="listItem1">
+                        <a href="/drug/index" class="herff">
+                            الأدوية
+                        </a>
+                    </il>
+                    <il class="listItem1">
+                        <a id="link2" class="herff" onmouseenter="myFunction(1,0)" onmouseleave="myFunction(1,1)">
+                            الطلبات
+                        </a>
+                        <ul id="list2" class="list2">
+
+                            <il class="listItem2">
+                                <a class="herff1" onmouseenter="myFunction(1,0)" onmouseleave="myFunction(1,1)">
+                                    طلبات التبرع النقدي
+                                </a>
+                            </il>
+                            <il class="listItem2">
+                                <a class="herff1" onmouseenter="myFunction(1,0)" onmouseleave="myFunction(1,1)">
+                                    طلبات التبرع بلأدوية
+                                </a>
+                            </il>
+                        </ul>
+                    </il>
+                    <il class="listItem1">
+                        <a id="link3" class="herff" onmouseenter="myFunction(2,0)" onmouseleave="myFunction(2,1)">
+                            الحسابات
+                        </a>
+                        <ul id="list3" class="list2">
+
+                            <il id ="hwl" class="listItem2">
+                                <a  class="herff1" onmouseenter="myFunction(2,0)" onmouseleave="myFunction(2,1)">
+                                    حسابات المسؤولين
+                                </a>
+                            </il>
+                            <il class="listItem2">
+                                <a href="/user/index" class="herff1" onmouseenter="myFunction(2,0)" onmouseleave="myFunction(2,1)">
+                                    حسابات المستخدمين
+                                </a>
+                            </il>
+                        </ul>
+                    </il>
+                </ul>
+            </div>
+            <div class="Line"></div>
+        </div>
+        <script>
+            function myFunction(i, t) {
+                const lists = ["list1", "list2", "list3"];
+                const links = ["link1", "link2", "link3"];
+                if (t == 0) {
+                        document.getElementById(lists[i]).style.display = "flex";
+                        document.getElementById(links[i]).classList.add('herffhover');
+                }
+
+                else {
+                        document.getElementById(lists[i]).style.display = "none";
+                        document.getElementById(links[i]).classList.remove('herffhover');
+                }
+                    
+            }
+        </script>
+    </header>
+    <div class="container">
+        <dialog id="dialog1">
+            <p>Greetings, one and all!</p>
+            <form method="dialog" >
+                <button>OK</button>
+            </form>
+        </dialog>
+            @RenderBody()
+    </div>
+
+    <footer class="border-top footer text-muted" style="border-top:dashed">
+        <div class="container">
+            &copy; 2023 - MDW - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+        </div>
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

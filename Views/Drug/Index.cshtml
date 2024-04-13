@@ -1,0 +1,168 @@
+﻿@{
+    int fff = 0;
+}
+<div class="dev1">
+    <div class="exportDiv">
+        <button id="exportBtn">
+            Export
+        </button>
+    </div>
+    <div id="searchTableDiv">
+        <p id="table_title">Drug Table</p>
+        <input type="search" placeholder="Search..." class="searchInput" />
+    </div>
+    <table class="styled-table">
+        <thead>
+            <tr>
+                <th>Drug name</th>
+                <th>Generic names</th>
+                <th>Dose ype</th>
+                <th>company</th>
+                <th>Edit</th>
+                <th>Delete</th>
+            </tr>
+        </thead>
+        <tbody id="tableB">
+    </table>
+    <div id="tableList" class="list3">
+        <button class="fa-solid fa-angles-left" onclick="pageNumClicked(6)"></button>
+        <button class="fa-solid fa-angle-left"  onclick="pageNumClicked(7)"></button>
+        <button id="button1" onclick="pageNumClicked(1)">1</button>
+        <button id="button2" onclick="pageNumClicked(2)">2</button>
+        <button id="button3" onclick="pageNumClicked(3)">3</button>
+        <button id="button4" onclick="pageNumClicked(4)">4</button>
+        <button id="button5" onclick="pageNumClicked(5)">5</button>
+        <button class="fa-solid fa-angle-right" onclick="pageNumClicked(8)"></button>
+        <button class="fa-solid fa-angles-right" onclick="pageNumClicked(9)"></button>
+        <p id="drugCount1" style="border "> Showing 1 to 10 from</p>
+        <label id="drugCount"></label>
+        <select name="sizes" id="select1" onchange="GetTableData(1)">
+            <option value="10">10</option>
+            <option value="20">20</option>
+            <option value="50">50</option>
+            <option value="ALL">ALL</option>
+        </select>
+    </div>
+</div>
+    <script>
+        function GetTableData(x) {
+            var pageNum = x;
+            var pageSize = document.getElementById("select1").value;
+            document.getElementById("tableB").innerHTML = "";
+            $.get("/drug/GetDrug/" + pageNum + "/" + pageSize+"/", function (data) {
+                // Update the content of the paragraph with id 'drugCount' with the received data
+            var data1 = JSON.parse('{"drugs":' + JSON.stringify(data) + '}');
+            var k = 0;
+                var class1 = "fa - solid fa - fa-pen";
+                var class2 = "fa - solid fa - trash";
+                for (k = 0; k < 40;k++) {
+                document.getElementById("tableB").innerHTML += "<tr><td>'" + data1.drugs[k].drugname + "'</td> <td>" + data1.drugs[k].genericnames + "</td> <td>" + data1.drugs[k].dosetype + "</td><td>" + data1.drugs[k].company + "</td> <td> <button class= 'fa-solid fa-pen' onclick = EditDrug(" + data1.drugs[k].id + ") > </button> </td > <td><button class='fa-solid fa-trash' + onclick=DeleteDrug(" + data1.drugs[k].id+")> </button> </td > </tr> ";
+                }
+                
+            });
+        }
+        function pageNumClicked(y) {
+            console.log(y);
+            switch (y) {
+                case (6):
+                    y = 1;
+                    document.getElementById("button1").innerHTML = 1;
+                    document.getElementById("button2").innerHTML = 2;
+                    document.getElementById("button3").innerHTML = 3;
+                    document.getElementById("button4").innerHTML = 4;
+                    document.getElementById("button5").innerHTML = 5;
+                    break;
+                case (7):
+                    var i = 1;
+                    for (; i < 6; i++)
+                        if (document.getElementById("button" + i).classList.contains("selectedPage"))
+                            break;
+                    pageNumClicked(parseInt(i - 1));
+                    return;
+                case (8):
+                    var i = 1;
+                    for (; i < 6; i++)
+                        if (document.getElementById("button" + i).classList.contains("selectedPage"))
+                            break;
+                    pageNumClicked(parseInt(i + 1));
+                    return;
+                case (9):
+                    let text = document.getElementById("drugCount1").innerHTML.split(" ");
+                    var lastPage = parseInt(text[text.length - 1]) / parseInt(document.getElementById("select1").value);
+                    document.getElementById("button1").innerHTML = lastPage - 4;
+                    document.getElementById("button2").innerHTML = lastPage - 3;
+                    document.getElementById("button3").innerHTML = lastPage - 2;
+                    document.getElementById("button4").innerHTML = lastPage - 1;
+                    document.getElementById("button5").innerHTML = lastPage;
+                    var pageNumber = parseInt(document.getElementById(str).innerHTML);
+                    document.getElementById("button1").classList.remove("selectedPage");
+                    document.getElementById("button2").classList.remove("selectedPage");
+                    document.getElementById("button3").classList.remove("selectedPage");
+                    document.getElementById("button4").classList.remove("selectedPage");
+                    document.getElementById("button5").classList.remove("selectedPage");
+                    document.getElementById("button5").className += "selectedPage";
+                    return;
+            }
+            var str = "button" + y;
+            var pageNumber = parseInt(document.getElementById(str).innerHTML);
+            console.log(pageNumber);
+            document.getElementById("button1").classList.remove("selectedPage");
+            document.getElementById("button2").classList.remove("selectedPage");
+            document.getElementById("button3").classList.remove("selectedPage");
+            document.getElementById("button4").classList.remove("selectedPage");
+            document.getElementById("button5").classList.remove("selectedPage");
+            if (y < 4) {
+                document.getElementById(str).className += "selectedPage";
+            } else {
+                document.getElementById("button3").className += "selectedPage";
+                document.getElementById("button1").innerHTML = pageNumber - 2;
+                document.getElementById("button2").innerHTML = pageNumber - 1;
+                document.getElementById("button3").innerHTML = pageNumber;
+                document.getElementById("button4").innerHTML = pageNumber + 1;
+                document.getElementById("button5").innerHTML = pageNumber + 2;
+            }
+            let text = document.getElementById("drugCount1").innerHTML.split(" ");
+            document.getElementById("drugCount1").innerHTML = "Showing " + (pageNumber - 1) * document.getElementById("select1").value + " to " + pageNumber * document.getElementById("select1").value + " from " + text[text.length - 1];
+            GetTableData(pageNumber);
+        }
+    function reorderThePageNumber(x) {
+            console.log("ddd");
+            $.get("/drug/GetDrugCount", function (data) {
+                // Update the content of the paragraph with id 'drugCount' with the received data
+                document.getElementById("drugCount1").innerHTML = "Showing " + (x-1) * document.getElementById("select1").value + " to " + x*document.getElementById("select1").value + " from " + data;
+            });
+        }
+    function EditDrug(id) {
+            console.log("dd");
+            document.getElementById("dialog1").innerHTML =
+            "<p>Drug details</p><form action=EditDrug method=POST> <input id = id type = hidden name = Id > <label for= drugname > Drug Name: </label> <input type = text id = drugname name = drugname > <br><br><label for= genericnames > genericnames: </label><input type = text id = genericnames name = genericnames> <br><br><label for= dosetype > dosetype: </label><input type = text id = dosetype name = dosetype> <br><br><label for= company > company: </label><input type = text id = company name = company> <br><br><input type=submit value = Save Changes ></form> <button id=cancel onclick=cancelButtonClicked()>cancel</button> ";
+            $.get("/drug/GetDrugById/"+id, function (data) {
+                document.getElementById("id").value = data.id;
+                document.getElementById("drugname").value = data.drugname;
+                document.getElementById("genericnames").value = data.genericnames;
+                document.getElementById("dosetype").value = data.dosetype;
+                document.getElementById("company").value = data.company;
+                });
+            document.getElementById("dialog1").showModal();
+    }
+        function cancelButtonClicked() {
+            document.getElementById("dialog1").close();
+        }
+        function DeleteDrug(x){
+            $.ajax({ url: "/drug/DeleteDrug/" + x, type: 'DELETE' });
+            var i = 1;
+            for (; i < 6; i++)
+                if (document.getElementById("button" + i).classList.contains("selectedPage"))
+                    break;
+            let text = document.getElementById("drugCount1").innerHTML.split(" ");
+            document.getElementById("drugCount1").innerHTML = parseInt(text[text.length - 1]) - 1;
+            pageNumClicked(parseInt(i));
+        }
+        window.onload = function () {
+            console.log("ddd");
+            reorderThePageNumber(1);
+            pageNumClicked(1);
+        }
+    </script>
+
+</div>

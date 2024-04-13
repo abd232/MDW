@@ -1,0 +1,96 @@
+.dev1[b-ptq1gkq8ox] {
+    display:inline-flex;
+    flex-direction:column;
+    align-content:center;
+    justify-content:center;
+    width:100%;
+}
+.styled-table[b-ptq1gkq8ox] {
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 0.9em;
+    font-family: sans-serif;
+    width:100%;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+.styled-table thead tr[b-ptq1gkq8ox] {
+    background-color: #009879;
+    color: #ffffff;
+    text-align: left;
+}
+.styled-table th[b-ptq1gkq8ox],.styled-table td[b-ptq1gkq8ox] {
+    padding: 12px 15px;
+}
+.styled-table tbody tr[b-ptq1gkq8ox] {
+    border-bottom: 1px solid #dddddd;
+}
+
+.styled-table tbody tr:nth-of-type(even)[b-ptq1gkq8ox] {
+    background-color: #f3f3f3;
+}
+
+.styled-table tbody tr:last-of-type[b-ptq1gkq8ox] {
+    border-bottom: 2px solid #009879;
+}
+.exportDiv[b-ptq1gkq8ox] {
+    display: inline-flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    width: 100%;
+    background-color: #f8f9fa;
+    border: 1px solid #dee2e6;
+}
+#exportBtn[b-ptq1gkq8ox] {
+    margin: 0.5rem 0 0.5rem 0;
+    font-family: Arial;
+    font-weight: bold;
+    font-size: 1rem;
+    border:none;
+    background-color: #A855F7;
+    border-radius: 8px;
+    color: #ffffff;
+    width: 5rem;
+    height: 3rem;
+}
+#exportBtn:hover[b-ptq1gkq8ox] {
+    background-color: #6366F1;
+}
+#searchTableDiv[b-ptq1gkq8ox] {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    background-color: #f8f9fa;
+    border: 1px solid #dee2e6;
+}
+#table_title[b-ptq1gkq8ox] {
+    align-self:start;
+    justify-self:start;
+}
+.searchInput[b-ptq1gkq8ox] {
+    align-self: start;
+    justify-self: end;
+}
+.circle[b-ptq1gkq8ox] {
+    height: 30px;
+    width: 30px;
+    background-color: aqua;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.list3[b-ptq1gkq8ox] {
+    display:flex;
+    flex-direction:row;
+    justify-content:center;
+    align-items:center;
+
+}
+.PageNumberList > button[b-ptq1gkq8ox] {
+    height: 30px;
+    width: 30px;
+    background-color: aqua;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

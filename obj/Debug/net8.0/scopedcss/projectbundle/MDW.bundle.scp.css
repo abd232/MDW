@@ -1,0 +1,370 @@
+/* _content/MDW/Views/Drug/index.cshtml.rz.scp.css */
+.dev1[b-mdq6mt7l2c] {
+    display:inline-flex;
+    flex-direction:column;
+    align-content:center;
+    justify-content:center;
+    width:100%;
+}
+.styled-table[b-mdq6mt7l2c] {
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 0.9em;
+    font-family: sans-serif;
+    width:100%;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+.styled-table thead tr[b-mdq6mt7l2c] {
+    background-color: #009879;
+    color: #ffffff;
+    text-align: left;
+}
+.styled-table th[b-mdq6mt7l2c],.styled-table td[b-mdq6mt7l2c] {
+    padding: 12px 15px;
+}
+.styled-table tbody tr[b-mdq6mt7l2c] {
+    border-bottom: 1px solid #dddddd;
+}
+
+.styled-table tbody tr:nth-of-type(even)[b-mdq6mt7l2c] {
+    background-color: #f3f3f3;
+}
+
+.styled-table tbody tr:last-of-type[b-mdq6mt7l2c] {
+    border-bottom: 2px solid #009879;
+}
+.exportDiv[b-mdq6mt7l2c] {
+    display: inline-flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    width: 100%;
+    background-color: #f8f9fa;
+    border: 1px solid #dee2e6;
+}
+#exportBtn[b-mdq6mt7l2c] {
+    margin: 0.5rem 0 0.5rem 0;
+    font-family: Arial;
+    font-weight: bold;
+    font-size: 1rem;
+    border:none;
+    background-color: #A855F7;
+    border-radius: 8px;
+    color: #ffffff;
+    width: 5rem;
+    height: 3rem;
+}
+#exportBtn:hover[b-mdq6mt7l2c] {
+    background-color: #6366F1;
+}
+#searchTableDiv[b-mdq6mt7l2c] {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    background-color: #f8f9fa;
+    border: 1px solid #dee2e6;
+}
+#table_title[b-mdq6mt7l2c] {
+    align-self:start;
+    justify-self:start;
+}
+.searchInput[b-mdq6mt7l2c] {
+    align-self: start;
+    justify-self: end;
+}
+.circle[b-mdq6mt7l2c] {
+    height: 30px;
+    width: 30px;
+    background-color: aqua;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.list3[b-mdq6mt7l2c] {
+    display:flex;
+    flex-direction:row;
+    justify-content:center;
+    align-items:baseline;
+}
+.PageNumberList[b-mdq6mt7l2c] {
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+button[b-mdq6mt7l2c] {
+    height: 30px;
+    width: 30px;
+    background-color: white;
+    border-radius: 50%;
+    border-color:white;
+    box-shadow: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding:1.3rem;
+}
+.unselectedPage[b-mdq6mt7l2c] {
+    border-color: white;
+}
+.selectedPage[b-mdq6mt7l2c] {
+    border-color: lightblue;
+}
+/* _content/MDW/Views/Shared/_Layout.cshtml.rz.scp.css */
+/* Please see documentation at https://learn.microsoft.com/aspnet/core/client-side/bundling-and-minification
+for details on configuring this project to bundle and minify static web assets. */
+
+.footer[b-8oquslacbn] {
+  position: static;
+  bottom: 0;
+  width: 100%;
+  white-space: nowrap;
+  line-height: 60px;
+}
+
+.header1[b-8oquslacbn] {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    position: static;
+    background-color: #383d7a;
+    width: 100%;
+    height: 5.1rem;
+    padding: 1rem;
+}
+.logoutButton[b-8oquslacbn] {
+    background-color: #5b64c7;
+    color: white;
+    border-radius: 8%;
+    border: none;
+    height: 3rem;
+    width: 8rem;
+    font-size: .95rem;
+    cursor: pointer;
+}
+
+.logoutButton:hover[b-8oquslacbn] {
+    background-color: rgb(243, 13, 13);
+}
+.title[b-8oquslacbn] {
+    color: white;
+    width: 74%;
+    font-size: 1.5rem;
+    text-align: center;
+    left: 3.7rem;
+    position: relative;
+}
+.list1[b-8oquslacbn] {
+    display: flex;
+    flex-wrap: wrap;
+    background-color: #5b64c7;
+    width: 100%;
+    height: 3rem;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 0;
+    position: relative;
+    z-index: 2;
+}
+.list2[b-8oquslacbn] {
+    display: none;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    background: rgba(0,0,0,0.8);
+    width: 100%;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 7px solid #5b64c7;
+    padding-left: 0;
+}
+.listItem1[b-8oquslacbn] {
+    display: flex;
+    position: relative;
+    height: 100%;
+    width: 15rem;
+    flex-wrap: wrap;
+    background-color: #5b64c7;
+    align-content: flex-start;
+    align-items: center;
+    justify-content: center;
+}
+.listItem2[b-8oquslacbn] {
+    width: 100%;
+}
+.herff[b-8oquslacbn] {
+    display:flex;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    color: white;
+    padding: 0 0.5rem 0 0.5rem;
+    text-decoration: none;
+}
+.herff:hover[b-8oquslacbn] {
+    cursor: pointer;
+    background-color: #383d7a;
+    border-color: #0f112d;
+    border-right: #0f112d;
+    border-bottom: #0f112d;
+    border-top: #0f112d;
+}
+.herffhover[b-8oquslacbn] {
+    display: flex;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    color: white;
+    padding: 0 0.5rem 0 0.5rem;
+    text-decoration: none;
+    background-color: #383d7a;
+    border-color: #0f112d;
+    border-right: #0f112d;
+    border-bottom: #0f112d;
+    border-top: #0f112d;
+    cursor:pointer;
+ }
+.herff1[b-8oquslacbn] {
+    display: flex;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    color: white;
+    text-decoration: none;
+}
+.herff1:hover[b-8oquslacbn] {
+    cursor: pointer;
+    background-color: #383d7a;
+    border-color: #0f112d;
+    border-right: #0f112d;
+    border-bottom: #0f112d;
+    border-top: #0f112d;
+}
+.menul[b-8oquslacbn] {
+
+}
+.Line[b-8oquslacbn] {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 100%;
+    height: 1rem;
+    background-color: #383d7a;
+    position: relative;
+    z-index: 1;
+}
+.container[b-8oquslacbn] {
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    margin-left:0;
+    margin-right:0;
+    width:100%;
+}
+/* _content/MDW/Views/User/index.cshtml.rz.scp.css */
+.dev1[b-ptq1gkq8ox] {
+    display:inline-flex;
+    flex-direction:column;
+    align-content:center;
+    justify-content:center;
+    width:100%;
+}
+.styled-table[b-ptq1gkq8ox] {
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 0.9em;
+    font-family: sans-serif;
+    width:100%;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+.styled-table thead tr[b-ptq1gkq8ox] {
+    background-color: #009879;
+    color: #ffffff;
+    text-align: left;
+}
+.styled-table th[b-ptq1gkq8ox],.styled-table td[b-ptq1gkq8ox] {
+    padding: 12px 15px;
+}
+.styled-table tbody tr[b-ptq1gkq8ox] {
+    border-bottom: 1px solid #dddddd;
+}
+
+.styled-table tbody tr:nth-of-type(even)[b-ptq1gkq8ox] {
+    background-color: #f3f3f3;
+}
+
+.styled-table tbody tr:last-of-type[b-ptq1gkq8ox] {
+    border-bottom: 2px solid #009879;
+}
+.exportDiv[b-ptq1gkq8ox] {
+    display: inline-flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    width: 100%;
+    background-color: #f8f9fa;
+    border: 1px solid #dee2e6;
+}
+#exportBtn[b-ptq1gkq8ox] {
+    margin: 0.5rem 0 0.5rem 0;
+    font-family: Arial;
+    font-weight: bold;
+    font-size: 1rem;
+    border:none;
+    background-color: #A855F7;
+    border-radius: 8px;
+    color: #ffffff;
+    width: 5rem;
+    height: 3rem;
+}
+#exportBtn:hover[b-ptq1gkq8ox] {
+    background-color: #6366F1;
+}
+#searchTableDiv[b-ptq1gkq8ox] {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    background-color: #f8f9fa;
+    border: 1px solid #dee2e6;
+}
+#table_title[b-ptq1gkq8ox] {
+    align-self:start;
+    justify-self:start;
+}
+.searchInput[b-ptq1gkq8ox] {
+    align-self: start;
+    justify-self: end;
+}
+.circle[b-ptq1gkq8ox] {
+    height: 30px;
+    width: 30px;
+    background-color: aqua;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.list3[b-ptq1gkq8ox] {
+    display:flex;
+    flex-direction:row;
+    justify-content:center;
+    align-items:center;
+
+}
+.PageNumberList > button[b-ptq1gkq8ox] {
+    height: 30px;
+    width: 30px;
+    background-color: aqua;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
