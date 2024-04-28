@@ -106,3 +106,4 @@ C:\Users\ABD\source\repos\MDW\MDW\obj\Debug\net8.0\scopedcss\Views\User\index.cs
 C:\Users\ABD\source\repos\MDW\MDW\bin\Debug\net8.0\Data\drugs.json
 C:\Users\ABD\source\repos\MDW\MDW\bin\Debug\net8.0\Newtonsoft.Json.dll
 C:\Users\ABD\source\repos\MDW\MDW\obj\Debug\net8.0\scopedcss\Views\Drug\index.cshtml.rz.scp.css
+C:\Users\ABD\source\repos\MDW\MDW\obj\Debug\net8.0\MDW.sourcelink.json
